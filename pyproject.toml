@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-logpile"
-version = "0.0.0"
+version = "0.1.0"
 description = "NoneBot2 local log files"
 authors = [
     {name = "Akirami", email = "Akiramiaya@outlook.com"},
