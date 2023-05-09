@@ -1,0 +1,19 @@
+[project]
+name = "nonebot-plugin-logpile"
+version = "0.0.0"
+description = "NoneBot2 local log files"
+authors = [
+    {name = "Akirami", email = "Akiramiaya@outlook.com"},
+]
+license = {text = "MIT"}
+dependencies = ["nonebot2>=2.0.0rc4"]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/A-kirami/nonebot-plugin-logpile"
+Repository = "https://github.com/A-kirami/nonebot-plugin-logpile"
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
