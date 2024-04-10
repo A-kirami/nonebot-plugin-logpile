@@ -1,9 +1,8 @@
 from datetime import datetime
-from nonebot import get_plugin_config
-from nonebot.plugin import PluginMetadata
 from typing import Any, Dict, List, Tuple, Union, get_args
 
-from nonebot import logger
+from nonebot import get_plugin_config, logger
+from nonebot.plugin import PluginMetadata
 
 from .config import Config, LevelName
 
@@ -30,12 +29,10 @@ def file_handler(
         level_names = get_args(LevelName)
         # check if level exists
         level_index = level_names.index(levels)
-        levels = tuple([level_names[level_index]])
+        levels = (level_names[level_index],)
     return [
         {
-            "sink": pc.logpile_path
-            / level.lower()
-            / f"{level.lower()}-{datetime.now().date()}.log",
+            "sink": pc.logpile_path / level.lower() / "{time:YYYY-MM-DD}.log",
             "level": level,
             **LOG_CONFIG,
         }
