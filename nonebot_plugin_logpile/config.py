@@ -7,7 +7,7 @@ LevelName = Literal["TRACE", "DEBUG", "INFO", "SUCCESS", "WARNING", "ERROR", "CR
 
 
 class Config(BaseModel, extra=Extra.ignore):
-    logpile_path: Path = Path.cwd() / "log"
+    logpile_path: Path = Path.cwd() / "logs"
     logpile_level: Union[LevelName, Tuple[LevelName]] = "ERROR"
     logpile_retention: int = 14
 

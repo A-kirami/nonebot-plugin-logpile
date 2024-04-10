@@ -1,5 +1,4 @@
-from datetime import datetime
-from typing import Any, Dict, List, Tuple, Union, get_args
+from typing import Any, Dict, List, Tuple, Union
 
 from nonebot import get_plugin_config, logger
 from nonebot.plugin import PluginMetadata
@@ -25,15 +24,19 @@ LOG_CONFIG = {
 def file_handler(
     levels: Union[LevelName, Tuple[LevelName]],
 ) -> List[Dict[str, Any]]:
-    if not isinstance(levels, tuple):
-        level_names = get_args(LevelName)
-        # check if level exists
-        level_index = level_names.index(levels)
-        levels = (level_names[level_index],)
+    if isinstance(levels, str):
+        return [
+            {
+                "sink": pc.logpile_path / "{time:YYYY-MM-DD}.log",
+                "level": levels,
+                **LOG_CONFIG,
+            }
+        ]
     return [
         {
             "sink": pc.logpile_path / level.lower() / "{time:YYYY-MM-DD}.log",
             "level": level,
+            "filter": lambda record, level=level: record["level"].name == level,
             **LOG_CONFIG,
         }
         for level in levels
