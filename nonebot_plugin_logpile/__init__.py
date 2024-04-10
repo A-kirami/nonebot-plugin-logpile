@@ -9,8 +9,11 @@ __plugin_meta__ = PluginMetadata(
     name="nonebot-plugin-logpile",
     description="将 nonebot 的日志记录保存到本地文件",
     usage="",
+    type="library",
+    homepage="https://github.com/A-kirami/nonebot-plugin-logpile",
     config=Config,
 )
+
 pc = get_plugin_config(Config)
 
 LOG_CONFIG = {
