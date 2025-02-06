@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 MD036 MD041 -->
+
 <div align="center">
   <a href="https://v2.nonebot.dev/store"><img src="https://github.com/A-kirami/nonebot-plugin-template/blob/resources/nbp_logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
   <br>
@@ -9,7 +11,6 @@
 # nonebot-plugin-logpile
 
 _✨ 本地日志保存 ✨_
-
 
 <a href="./LICENSE">
     <img src="https://img.shields.io/github/license/A-kirami/nonebot-plugin-logpile.svg" alt="license">
@@ -43,21 +44,25 @@ _✨ 本地日志保存 ✨_
 <summary>pip</summary>
 
     pip install nonebot-plugin-logpile
+
 </details>
 <details>
 <summary>pdm</summary>
 
     pdm add nonebot-plugin-logpile
+
 </details>
 <details>
 <summary>poetry</summary>
 
     poetry add nonebot-plugin-logpile
+
 </details>
 <details>
 <summary>conda</summary>
 
     conda install nonebot-plugin-logpile
+
 </details>
 
 打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
@@ -70,8 +75,8 @@ _✨ 本地日志保存 ✨_
 
 在 nonebot2 项目的`.env`文件中添加下表中的必填配置
 
-| 配置项 | 必填 | 默认值 | 说明 |
-|:-----:|:----:|:----:|:----:|
-| logpile_path | 否 | `./logs` | 日志文件保存路径，默认保存在当前工作目录下的 `logs` 文件夹中 |
-| logpile_level | 否 | ERROR | 日志保存等级，可以为列表或者字符串。如果是字符串，那么保存当前等级及以上所有等级的日志，否则只保存列表中的等级 |
-| logpile_retention | 否 | 14 | 日志文件保留时长，默认保留14天，自动清理过期日志 |
+|       配置项        | 必填 |  默认值  |                                                      说明                                                      |
+| :-----------------: | :--: | :------: | :------------------------------------------------------------------------------------------------------------: |
+|   `LOGPILE_PATH`    |  否  | `./logs` |                          日志文件保存路径，默认保存在当前工作目录下的 `logs` 文件夹中                          |
+|   `LOGPILE_LEVEL`   |  否  | `ERROR`  | 日志保存等级，可以为列表或者字符串。如果是字符串，那么保存当前等级及以上所有等级的日志，否则只保存列表中的等级 |
+| `LOGPILE_RETENTION` |  否  |   `14`   |                               日志文件保留时长，默认保留 14 天，自动清理过期日志                               |

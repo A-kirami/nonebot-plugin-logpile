@@ -33,7 +33,7 @@ def file_handler(
                 "sink": pc.logpile_path / "{time:YYYY-MM-DD}.log",
                 "level": levels,
                 **LOG_CONFIG,
-            }
+            },
         ]
     return [
         {
